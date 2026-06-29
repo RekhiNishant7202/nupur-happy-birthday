@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dear Nupur! 🎂</title>
+    <link rel="stylesheet" href="css/style.css?v=102">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="music-player" class="music-player">
+        <div class="music-controls">
+            <button id="play-pause-btn" class="control-btn">
+                <span id="play-icon">▶️</span>
+                <span id="pause-icon" style="display:none;">⏸️</span>
+            </button>
+            <button id="mute-btn" class="control-btn">
+                <span id="volume-icon">🔊</span>
+                <span id="mute-icon" style="display:none;">🔇</span>
+            </button>
+        </div>
+        <div class="music-notes" id="music-notes-container"></div>
+    </div>
+    <audio id="bg-music" loop preload="none">
+        <source src="music/Happy%20Birthday.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c54879297a.mp3?filename=happy-birthday-118485.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="page active" id="page1">
+        <div class="floating-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span>
+        </div>
+        <div class="content">
+            <h1 class="typing-text" id="welcome-title"></h1>
+            <button class="btn-primary" id="start-btn">Open Your Birthday Surprise ❤️</button>
+        </div>
+    </div>
+
+    <div class="page" id="page2">
+        <div class="floating-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span>
+        </div>
+        <div class="content">
+            <h1>Let's Sing Together 🎵</h1>
+            <p class="subtitle">Happy Birthday Music</p>
+            <button class="btn-primary" id="page2-next-btn">Next →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page3">
+        <div class="floating-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span>
+        </div>
+        <div class="content">
+            <h1>Pop the Balloons! 🎈</h1>
+            <p class="subtitle">Click each balloon for a sweet surprise</p>
+            <div class="balloons-container" id="balloons-container"></div>
+            <button class="btn-primary" id="page3-next-btn" disabled>Next →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page4">
+        <div class="floating-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span>
+        </div>
+        <div class="content">
+            <h1>Are you excited for what's next?</h1>
+            <div class="buttons-container">
+                <button class="btn-primary" id="yes-btn">Yes ❤️</button>
+                <button class="btn-secondary" id="no-btn">No 🙈</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page5">
+        <div class="floating-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span>
+        </div>
+        <div class="content">
+            <h1>Make a Wish! 🎂</h1>
+            <p class="subtitle">Click the cake to blow out all candles!</p>
+            <div class="cake-container" id="cake-container">
+                <div class="cake" id="cake">
+                    <div class="cake-layer layer-1"></div>
+                    <div class="cake-layer layer-2"></div>
+                    <div class="cake-layer layer-3"></div>
+                    <div class="candles-container" id="candles-container"></div>
+                    <div class="cake-decoration" style="top: 10px; left: 40px;"></div>
+                    <div class="cake-decoration" style="top: 15px; left: 100px;"></div>
+                    <div class="cake-decoration" style="top: 8px; left: 160px;"></div>
+                    <div class="cake-decoration" style="top: 12px; left: 220px;"></div>
+                    <div class="cake-decoration" style="top: 85px; left: 50px;"></div>
+                    <div class="cake-decoration" style="top: 90px; left: 110px;"></div>
+                    <div class="cake-decoration" style="top: 87px; left: 170px;"></div>
+                </div>
+            </div>
+            <p id="wish-message" style="display:none;">Close your eyes and make a wish... ✨</p>
+            <button class="btn-primary" id="page5-next-btn" disabled>Next →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page6">
+        <div class="floating-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span>
+        </div>
+        <div class="content">
+            <h1>A Special Gift For You! 🎁</h1>
+            <p class="subtitle">Click the gift box to open!</p>
+            <div class="gift-container">
+                <div class="gift-box" id="gift-box">
+                    <div class="gift-lid"></div>
+                    <div class="gift-body">
+                        <div class="gift-ribbon-vertical"></div>
+                        <div class="gift-ribbon-horizontal"></div>
+                        <div class="gift-bow">
+                            <div class="bow-left"></div>
+                            <div class="bow-center"></div>
+                            <div class="bow-right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flower-bouquet" id="flower-bouquet">
+                    <svg width="350" height="300" viewBox="0 0 350 300" xmlns="http://www.w3.org/2000/svg" class="bouquet-svg">
+                        <!-- Stems -->
+                        <path d="M175 290 Q170 200 175 180" stroke="#2d5a27" stroke-width="3" fill="none" />
+                        <path d="M155 290 Q160 210 145 170" stroke="#2d5a27" stroke-width="3" fill="none" />
+                        <path d="M195 290 Q190 205 205 165" stroke="#2d5a27" stroke-width="3" fill="none" />
+                        <path d="M135 290 Q150 220 125 155" stroke="#2d5a27" stroke-width="3" fill="none" />
+                        <path d="M215 290 Q200 215 225 150" stroke="#2d5a27" stroke-width="3" fill="none" />
+                        
+                        <!-- Leaves -->
+                        <ellipse cx="165" cy="240" rx="15" ry="8" fill="#4a9c3d" transform="rotate(-30 165 240)" />
+                        <ellipse cx="185" cy="250" rx="15" ry="8" fill="#4a9c3d" transform="rotate(30 185 250)" />
+                        <ellipse cx="140" cy="220" rx="12" ry="6" fill="#4a9c3d" transform="rotate(-40 140 220)" />
+                        <ellipse cx="210" cy="230" rx="12" ry="6" fill="#4a9c3d" transform="rotate(40 210 230)" />
+                        
+                        <!-- Pink Rose (Center) -->
+                        <g transform="translate(175, 150) scale(1)">
+                            <!-- Outer petals -->
+                            <ellipse cx="0" cy="-15" rx="18" ry="25" fill="#ff69b4" transform="rotate(-20)" />
+                            <ellipse cx="0" cy="-15" rx="18" ry="25" fill="#ff85c0" transform="rotate(20)" />
+                            <ellipse cx="0" cy="-15" rx="18" ry="25" fill="#ff69b4" transform="rotate(-60)" />
+                            <ellipse cx="0" cy="-15" rx="18" ry="25" fill="#ff85c0" transform="rotate(60)" />
+                            <ellipse cx="0" cy="-15" rx="18" ry="25" fill="#ff69b4" transform="rotate(-100)" />
+                            <ellipse cx="0" cy="-15" rx="18" ry="25" fill="#ff85c0" transform="rotate(100)" />
+                            <!-- Inner petals -->
+                            <ellipse cx="0" cy="-10" rx="12" ry="18" fill="#ff9fcc" transform="rotate(-30)" />
+                            <ellipse cx="0" cy="-10" rx="12" ry="18" fill="#ffb3d6" transform="rotate(30)" />
+                            <ellipse cx="0" cy="-10" rx="12" ry="18" fill="#ff9fcc" transform="rotate(-90)" />
+                            <ellipse cx="0" cy="-10" rx="12" ry="18" fill="#ffb3d6" transform="rotate(90)" />
+                            <!-- Center -->
+                            <circle cx="0" cy="-5" r="6" fill="#ffb3d6" />
+                        </g>
+                        
+                        <!-- Sunflower (Right) -->
+                        <g transform="translate(230, 130) scale(0.9)">
+                            <!-- Petals -->
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffd700" transform="rotate(0)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffdb4d" transform="rotate(30)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffd700" transform="rotate(60)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffdb4d" transform="rotate(90)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffd700" transform="rotate(120)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffdb4d" transform="rotate(150)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffd700" transform="rotate(180)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffdb4d" transform="rotate(210)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffd700" transform="rotate(240)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffdb4d" transform="rotate(270)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffd700" transform="rotate(300)" />
+                            <ellipse cx="0" cy="-30" rx="10" ry="25" fill="#ffdb4d" transform="rotate(330)" />
+                            <!-- Center -->
+                            <circle cx="0" cy="-30" r="15" fill="#8b4513" />
+                            <circle cx="-5" cy="-33" r="2" fill="#5c3317" />
+                            <circle cx="5" cy="-28" r="2" fill="#5c3317" />
+                            <circle cx="0" cy="-25" r="2" fill="#5c3317" />
+                            <circle cx="-7" cy="-27" r="2" fill="#5c3317" />
+                            <circle cx="7" cy="-32" r="2" fill="#5c3317" />
+                        </g>
+                        
+                        <!-- White Lily (Left) -->
+                        <g transform="translate(120, 125) scale(0.95)">
+                            <!-- Petals -->
+                            <ellipse cx="0" cy="-25" rx="15" ry="30" fill="#ffffff" transform="rotate(-15)" />
+                            <ellipse cx="0" cy="-25" rx="15" ry="30" fill="#fff0f3" transform="rotate(15)" />
+                            <ellipse cx="0" cy="-25" rx="15" ry="30" fill="#ffffff" transform="rotate(-55)" />
+                            <ellipse cx="0" cy="-25" rx="15" ry="30" fill="#fff0f3" transform="rotate(55)" />
+                            <ellipse cx="0" cy="-25" rx="15" ry="30" fill="#ffffff" transform="rotate(-90)" />
+                            <ellipse cx="0" cy="-25" rx="15" ry="30" fill="#fff0f3" transform="rotate(90)" />
+                            <!-- Stamens -->
+                            <line x1="-8" y1="-20" x2="-8" y2="-5" stroke="#ffd700" stroke-width="2" />
+                            <line x1="8" y1="-20" x2="8" y2="-5" stroke="#ffd700" stroke-width="2" />
+                            <line x1="0" y1="-22" x2="0" y2="-4" stroke="#ffd700" stroke-width="2" />
+                            <circle cx="-8" cy="-5" r="3" fill="#ff8c00" />
+                            <circle cx="8" cy="-5" r="3" fill="#ff8c00" />
+                            <circle cx="0" cy="-4" r="3" fill="#ff8c00" />
+                        </g>
+                        
+                        <!-- Red Tulip (Right Lower) -->
+                        <g transform="translate(210, 190) scale(0.85)">
+                            <!-- Petals -->
+                            <ellipse cx="0" cy="-20" rx="12" ry="22" fill="#ff6347" transform="rotate(-10)" />
+                            <ellipse cx="0" cy="-20" rx="12" ry="22" fill="#ff785f" transform="rotate(10)" />
+                            <ellipse cx="0" cy="-20" rx="12" ry="22" fill="#ff6347" transform="rotate(-40)" />
+                            <ellipse cx="0" cy="-20" rx="12" ry="22" fill="#ff785f" transform="rotate(40)" />
+                            <ellipse cx="0" cy="-20" rx="12" ry="22" fill="#ff6347" transform="rotate(-70)" />
+                            <ellipse cx="0" cy="-20" rx="12" ry="22" fill="#ff785f" transform="rotate(70)" />
+                        </g>
+                        
+                        <!-- Pink Carnation (Left Lower) -->
+                        <g transform="translate(140, 195) scale(0.8)">
+                            <!-- Many small petals for carnation -->
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(0)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(20)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(40)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(60)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(80)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(100)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(120)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(140)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(160)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(180)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(200)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(220)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(240)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(260)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(280)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(300)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffb6c1" transform="rotate(320)" />
+                            <ellipse cx="0" cy="-20" rx="8" ry="15" fill="#ffc9d0" transform="rotate(340)" />
+                            <!-- Center -->
+                            <circle cx="0" cy="-15" r="7" fill="#ffd1dc" />
+                        </g>
+                        
+                        <!-- Baby's Breath filler -->
+                        <g fill="#ffffff">
+                            <circle cx="100" cy="140" r="3" />
+                            <circle cx="105" cy="155" r="2.5" />
+                            <circle cx="95" cy="160" r="3" />
+                            <circle cx="110" cy="145" r="2" />
+                            <circle cx="102" cy="170" r="2.5" />
+                            
+                            <circle cx="250" cy="170" r="3" />
+                            <circle cx="255" cy="155" r="2.5" />
+                            <circle cx="245" cy="160" r="3" />
+                            <circle cx="260" cy="175" r="2" />
+                            
+                            <circle cx="150" cy="105" r="2.5" />
+                            <circle cx="155" cy="110" r="2" />
+                            <circle cx="145" cy="115" r="2.5" />
+                            
+                            <circle cx="200" cy="100" r="2.5" />
+                            <circle cx="205" cy="105" r="2" />
+                            <circle cx="195" cy="110" r="2.5" />
+                        </g>
+                        
+                        <!-- Wrapping paper/ribbon at bottom -->
+                        <rect x="130" y="270" width="90" height="25" rx="5" fill="url(#gradRibbon)" />
+                        <defs>
+                            <linearGradient id="gradRibbon" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#ffed4d;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="175" cy="272" rx="8" ry="12" fill="#ffd700" />
+                        <ellipse cx="165" cy="270" rx="10" ry="7" fill="#ffdb4d" />
+                        <ellipse cx="185" cy="270" rx="10" ry="7" fill="#ffdb4d" />
+                    </svg>
+                </div>
+            </div>
+            <button class="btn-primary" id="page6-next-btn" disabled>Next →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page7">
+        <div class="floating-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span>
+        </div>
+        <div class="content">
+            <h1>A Special Message For You 💌</h1>
+            <div class="envelope-container">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-flap"></div>
+                </div>
+            </div>
+            <div class="letter-container" id="letter-container" style="display: none;">
+                <div class="letter-paper">
+                    <div class="letter-content" id="letter-content"></div>
+                </div>
+            </div>
+            <button class="btn-primary" id="page7-next-btn" disabled>Next →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page8">
+        <div class="floating-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span>
+        </div>
+        <div class="content">
+            <h1>Apology Letter ❤️</h1>
+            <div class="final-message">
+                <p>Dear Nupur,</p>
+                <p>First of all, happy birthday! I don't want this letter to ruin your special day.</p>
+                <p>I'm truly sorry for the mistake I made. My intention was to show you how much you mean to me. I know the way I expressed it was wrong, and I sincerely regret it. I'm learning from my mistakes and trying to become a better person.</p>
+                <p>You may feel that I'm not the person you thought I was, and I understand that. I know I'm an emotional person who gets attached easily, but I never tried to control you. I understand that some of my actions may have made it seem that way, but that was never my intention.</p>
+                <p>Whenever I complimented you, I truly meant every word. Everything I said came from my heart. None of it was fake.</p>
+                <p>Nupur, can we start over? I feel that we came to a conclusion too quickly, and I don't want to give up on us. My feelings for you haven't changed, and I don't think they ever will.</p>
+                <p>I want you to be a part of my life not just as a friend, but as someone I hope to spend the rest of my life with.</p>
+                <p>Please take all the time you need. I won't force you to be with me or pressure you into making a decision. Whatever you decide, I will respect it.</p>
+
+                <p>Once again, happy birthday! I hope you have a wonderful day filled with happiness.</p>
+                <p>Thank you for being you! 💖</p>
+                <p><br>Your Nishant ❤️</p>
+            </div>
+            <button class="btn-primary" id="page8-next-btn">Next →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page9">
+        <div class="fireworks-container" id="fireworks-container"></div>
+        <div class="confetti-container" id="confetti-container"></div>
+        <div class="grand-finale-elements">
+            <span class="heart">❤️</span><span class="sparkle">✨</span><span class="butterfly">🦋</span><span class="star">⭐</span><span class="petal">🌸</span><span class="balloon">🎈</span>
+        </div>
+        <div class="content">
+            <h1>Happy Birthday Dear Nupur! 🎂  ❤️</h1>
+            <p class="grand-finale-text">May your smile always shine as brightly as today.</p>
+           
+        </div>
+    </div>
+
+    <script src="js/script.js?v=102"></script>
+</body>
+</html>
